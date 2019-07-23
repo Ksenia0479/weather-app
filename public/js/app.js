@@ -6,7 +6,7 @@ formElem.addEventListener("submit", e => {
   e.preventDefault();
 
   const location = searchElem.value;
-  const url = `http://localhost:3000/weather?location=${location}`;
+  const url = `/weather?location=${location}`;
 
   forecastBlock.textContent = "Loading...";
 
