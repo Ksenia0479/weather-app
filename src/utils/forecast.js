@@ -9,11 +9,11 @@ const forecast = ({ longitude, latitude }, callback) => {
     } else if (error) {
       callback(error, undefined);
     } else {
-      const forecastNote = `It's currently ${
-        currently.temperature
-      } degrees out, ${currently.summary}. There is a ${
-        currently.precipProbability
-      } change of rain`;
+      const temperature = (((currently.temperature - 32) * 5) / 9).toFixed(2);
+
+      const forecastNote = `It's currently ${temperature} degrees out, ${
+        currently.summary
+      }. There is a ${currently.precipProbability}% change of rain`;
       callback(undefined, forecastNote);
     }
   });
